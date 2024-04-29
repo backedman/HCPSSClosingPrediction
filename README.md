@@ -20,9 +20,13 @@ The server is currently set to run on port 5002. If you want to change this, mod
 
 If the port is changed, make sure to change the port in `App.js` (in frontend/src) as well as this is the port requests are made to.
 
+Server will be hosted localy at `http://localhost:5002` or `http://localhost:<port>` if modified.
+
 ### To run React.js App
 
 ```
 cd frontend
 npm start
 ```
+
+App will be hosted localy at `http://localhost:3000`

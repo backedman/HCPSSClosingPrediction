@@ -1,5 +1,7 @@
 ## Snow Day Prediction App
 
+A very cool and awesome app 
+
 React.js frontend,  Flask backend
 
 ### To run Flask server

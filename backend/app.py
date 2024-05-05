@@ -1,8 +1,12 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
+from model.model import *
+
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
+snow_model = SnowDayModel()
+snow_model.load_model('model/model.pkl')
 
 @app.route('/predict', methods=['POST', 'OPTIONS'])
 def predict():
@@ -17,15 +21,15 @@ def predict():
         # Actual prediction
         data = request.get_json()
         date = data['date']
-        county = data['county']
         
         ##### Using date and county, make predicition here
         
-        pred = 5.5
+        pred = snow_model.predict(date)[0]
         
-        
-        # Placeholder for your ML model's prediction logic
-        prediction_result = f"Snow Day Probability: {pred} for {date} in {county}"
+        if(pred == -1):
+            prediction_result = "N/A. Please choose a present or past date, not a future date."
+        else:
+            prediction_result = f"There is a {100*pred}% chance of a Snow Day for {date} in Howard County"
         return jsonify({'prediction': prediction_result})
 
 if __name__ == '__main__':

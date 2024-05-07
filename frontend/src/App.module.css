@@ -1,0 +1,186 @@
+.background,
+.backgroundIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 960px;
+}
+.backgroundIcon {
+  display: none;
+}
+.background {
+  background-color: #43b0ff;
+}
+.snowDayPredictor {
+  margin: 0;
+  position: absolute;
+  font-size: inherit;
+  line-height: 110%;
+  font-weight: 600;
+  font-family: inherit;
+}
+.snowDayPredictorWrapper {
+  position: absolute;
+  top: 184px;
+  left: 437px;
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: var(--br-17xl);
+  background-color: var(--color-white);
+  border: 6px solid var(--color-black);
+  box-sizing: border-box;
+  width: 782px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-29xl) var(--padding-61xl);
+}
+.snow3Icon {
+  position: absolute;
+  top: 480px;
+  left: 1178px;
+  width: 331px;
+  height: 331px;
+  object-fit: contain;
+}
+.resultsOutputtextWrapper {
+  position: absolute;
+  top: 755px;
+  left: 449px;
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.4);
+  border-radius: var(--br-17xl);
+  background-color: var(--color-white);
+  border: 6px solid var(--color-black);
+  box-sizing: border-box;
+  width: 782px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-29xl) var(--padding-61xl);
+}
+.snowDate {
+  width: 221px;
+  position: relative;
+  line-height: 64px;
+  font-weight: 600;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.snowDateWrapper {
+  cursor: pointer;
+  position: absolute;
+  top: 450px;
+  left: 476px;
+  box-shadow: 4px 8px 0#000;
+  border-radius: var(--br-981xl);
+  background-color: var(--color-white);
+  border: 6px solid var(--color-black);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xs) var(--padding-29xl);
+  font-size: var(--font-size-13xl);
+}
+.coverChild,
+.input {
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+  font-family: var(--font-inter);
+}
+.coverChild {
+  border: 6px solid var(--color-black);
+  outline: 0;
+  background-color: var(--color-white);
+  position: absolute;
+  top: 10px;
+  left: 410px;
+  box-shadow: 4px 8px 0#000;
+  border-radius: var(--br-981xl);
+  box-sizing: border-box;
+  width: 280px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-xs) var(--padding-29xl);
+  color: var(--color-black);
+}
+.input {
+  position: relative;
+  line-height: 64px;
+  color: var(--color-white);
+  text-align: left;
+}
+.inputWrapper {
+  cursor: pointer;
+  border: 6px solid var(--color-black);
+  padding: var(--padding-xs) var(--padding-29xl);
+  background-color: #fc3030;
+  position: absolute;
+  top: 629px;
+  left: 745px;
+  box-shadow: 4px 8px 0#000;
+  border-radius: var(--br-981xl);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.cloudComputing1Icon {
+  position: absolute;
+  top: -196px;
+  left: -117px;
+  width: 598px;
+  height: 529px;
+  object-fit: cover;
+}
+.cloudComputing2Icon,
+.cloudComputing4Icon {
+  position: absolute;
+  top: 16px;
+  left: 1313px;
+  width: 418px;
+  height: 337px;
+  object-fit: cover;
+}
+.cloudComputing2Icon {
+  top: 12px;
+  left: 1060px;
+  width: 598px;
+  height: 529px;
+}
+.cloudComputing3Icon,
+.snow1Icon,
+.snow2Icon {
+  position: absolute;
+  top: 165px;
+  left: 1343px;
+  width: 418px;
+  height: 337px;
+  object-fit: cover;
+}
+.snow1Icon,
+.snow2Icon {
+  top: 285px;
+  left: -21px;
+  width: 331px;
+  height: 331px;
+}
+.snow2Icon {
+  top: 629px;
+  object-fit: contain;
+}
+.cover {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white);
+  height: 960px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-29xl);
+  color: var(--color-black);
+  font-family: var(--font-inter);
+}

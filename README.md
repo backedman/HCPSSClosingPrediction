@@ -15,7 +15,7 @@ pip install -r requirements.txt
 To run the server
 ```
 cd backend
-python app.py
+flask run
 ```
 
 The server is currently set to run on port 5002. If you want to change this, modify in the `app.py` file.

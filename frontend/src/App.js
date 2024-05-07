@@ -1,51 +1,67 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from "./App.module.css";
 
-function App() {
-    const [date, setDate] = useState('');
-    const [county, setCounty] = useState('');
-    const [prediction, setPrediction] = useState('');
+const App = () => {
+  const [date, setDate] = useState('');
+  const [prediction, setPrediction] = useState('');
 
-    const handleSubmit = async (event) => {
-      event.preventDefault();
-      const url = 'http://localhost:5002/predict'; // make sure this matches the correct port Flask server is running on
-      const data = { date, county };
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: JSON.stringify(data),
-        url,
-      };
-      axios(options)
-        .then(response => {
-          setPrediction(response.data.prediction); // Update state to display the prediction
-          console.log(response.data); // Optional: for debugging
-        })
-        .catch(error => console.error('Error:', error));
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const url = 'http://localhost:5000/predict';
+    const data = {date};
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: JSON.stringify(data),
+      url,
     };
+    axios(options)
+      .then(response => {
+        setPrediction(response.data.prediction);
+      })
+      .catch(error => console.error('Error:', error));
+  };
 
-    return (
-        <div>
-          <h1>Snow Day Closure Predictor</h1>
-          <form onSubmit={handleSubmit}>
-            <label>
-              Date:
-              <input type="date" value={date} onChange={e => setDate(e.target.value)} required />
-            </label>
-            <br />
-            <label>
-              County:
-              <input type="text" value={county} onChange={e => setCounty(e.target.value)} required />
-            </label>
-            <br />
-
-            <button type="submit">Predict</button>
-          </form>
-          {prediction && <p>{prediction}</p>}
-        </div>
-    );
-}
+  return (
+    <div className={styles.cover}>
+      <img className={styles.backgroundIcon} alt="" src="/background.svg" />
+      <section className={styles.background} id="background" />
+      <div className={styles.snowDayPredictorWrapper}>
+        <h3 className={styles.snowDayPredictor} id="header">
+          Snow Day Predictor
+        </h3>
+      </div>
+      <div className={styles.resultsOutputtextWrapper}>
+        <h3 className={styles.snowDayPredictor}>Results: {prediction}</h3>
+      </div>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label className={styles.snowDateWrapper}>
+          <div className={styles.snowDate}>Snow Date</div>
+          <input
+            className={styles.coverChild}
+            type="date"
+            value={date}
+            onChange={e => setDate(e.target.value)}
+            required
+          />
+        </label>
+        <button className={styles.inputWrapper} type="submit">
+          <div className={styles.input}>Predict</div>
+        </button>
+      </form>
+      <img className={styles.snow3Icon} alt="" src="/snow1Icon.png" />
+      <img className={styles.cloudComputing1Icon} alt="" src="/cloudComputing1Icon.png" />
+      <img className={styles.cloudComputing4Icon} alt="" src="/cloudComputing4Icon.png" />
+      <img className={styles.cloudComputing2Icon} alt="" src="/cloudComputing2Icon.png" />
+      <img className={styles.cloudComputing3Icon} alt="" src="/cloudComputing3Icon.png" />
+      <img className={styles.snow1Icon} alt="" src="/snow1Icon.png" />
+      <img className={styles.snow2Icon} alt="" src="/snow2Icon.png" />
+    </div>
+  );
+};
 
 export default App;
+

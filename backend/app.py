@@ -24,12 +24,16 @@ def predict():
         
         ##### Using date and county, make predicition here
         
+        
         pred = snow_model.predict(date)[0]
+        print(pred)
         
         if(pred == -1):
             prediction_result = "N/A. Please choose a present or past date, not a future date."
         else:
             prediction_result = f"There is a {100*pred}% chance of a Snow Day for {date} in Howard County"
+            
+            
         return jsonify({'prediction': prediction_result})
 
 if __name__ == '__main__':

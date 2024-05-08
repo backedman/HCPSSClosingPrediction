@@ -179,9 +179,13 @@ class SnowDayModel:
                 daily = response.Daily()
                 for ind, variable in enumerate(weather_variables):
                     variable_values = daily.Variables(ind).ValuesAsNumpy()
+                    if isinstance(variable_values, np.ndarray):  # Checking if variable_values is a numpy array
+                        variable_values = variable_values[0]
+                        
                     weather_data[f"{location}_{variable}"] = variable_values
             
         # Create a DataFrame from the weather data
+        print(weather_data)
         weather_df = pd.DataFrame(data=weather_data)
         weather_df = self.preprocess(weather_df)
         

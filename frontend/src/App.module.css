@@ -24,6 +24,7 @@
   position: absolute;
   top: 184px;
   left: 437px;
+  font-size: 30px;
   box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.4);
   border-radius: var(--br-17xl);
   background-color: var(--color-white);

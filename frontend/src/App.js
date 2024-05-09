@@ -8,7 +8,7 @@ const App = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const url = 'http://localhost:5000/predict';
+    const url = 'http://localhost:5002/predict';
     const data = {date};
     const options = {
       method: 'POST',
@@ -64,4 +64,5 @@ const App = () => {
 };
 
 export default App;
+
 
